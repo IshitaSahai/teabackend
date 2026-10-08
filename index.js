@@ -7,6 +7,48 @@ const port = 3000//threre're many virtual ports in a computer, just like we use 
 
 //there're many virtual ports via which the server will listen, our server will listen on the port 3000 (it can be any number, 3000 or 4000 or anything not neccessarily 3000)
 
+
+//trying to add the object having the data from the api.github:-
+const githubdata={
+  "login": "hiteshchoudhary",
+  "id": 11613311,
+  "node_id": "MDQ6VXNlcjExNjEzMzEx",
+  "avatar_url": "https://avatars.githubusercontent.com/u/11613311?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/hiteshchoudhary",
+  "html_url": "https://github.com/hiteshchoudhary",
+  "followers_url": "https://api.github.com/users/hiteshchoudhary/followers",
+  "following_url": "https://api.github.com/users/hiteshchoudhary/following{/other_user}",
+  "gists_url": "https://api.github.com/users/hiteshchoudhary/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/hiteshchoudhary/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/hiteshchoudhary/subscriptions",
+  "organizations_url": "https://api.github.com/users/hiteshchoudhary/orgs",
+  "repos_url": "https://api.github.com/users/hiteshchoudhary/repos",
+  "events_url": "https://api.github.com/users/hiteshchoudhary/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/hiteshchoudhary/received_events",
+  "type": "User",
+  "site_admin": false,
+  "name": "Hitesh Choudhary",
+  "company": null,
+  "blog": "https://www.youtube.com/c/HiteshChoudharydotcom",
+  "location": "India",
+  "email": null,
+  "hireable": null,
+  "bio": "I make coding videos on youtube and for courses. My youtube channel explains my work more. Check that out!",
+  "twitter_username": "hiteshdotcom",
+  "public_repos": 71,
+  "public_gists": 1,
+  "followers": 7037,
+  "following": 0,
+  "created_at": "2015-03-23T13:03:25Z",
+  "updated_at": "2023-09-09T07:27:44Z"
+}
+
+//now we wanna create a url where we wanna pass all this data to the github:-
+app.get('/github',(req,res)=>{
+  res.json(githubdata)
+})
+
 //SENDING REQUESTS:-
 //now, we're making a get request via app(the powerful thing that we've got from the express is app)
 app.get('/', (req, res) => {//we're asking the app to listen on the home route ie. the slash('/'), if any sort of request comes on the slash('/'), then we'll send a hello world on the response via doing a callback 
